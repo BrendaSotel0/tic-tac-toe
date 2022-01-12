@@ -28,3 +28,21 @@ main {
   width: 40%;
   height: 5%;
 }
+
+.row-1, .row-2, .row-3 {
+  height: 33.33%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.square {
+  border: 2px solid #D8BFD8;
+  background-color: #BA55D3;
+  height: 150px;
+  width: 150px
+}
+
+.hidden {
+  /* display: none; */
+}
