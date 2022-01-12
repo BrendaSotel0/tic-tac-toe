@@ -1,0 +1,23 @@
+html,
+body {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  font-family: 'Avantgarde', sans-serif;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #9932CC;
+  width: 20%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #D8BFD8;
+  width: 60%;
+}
