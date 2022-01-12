@@ -22,8 +22,10 @@ class Game {
     ];
   }
 
-  determineCurrentPlayer() {
-
+  determineCurrentToken() {
+    var currentToken;
+    this.isPlayer1Turn === true ? currentToken = this.player1.token : currentToken = this.player2.token;
+    return currentToken;
   }
 
   checkForWins() {
