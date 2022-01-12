@@ -21,4 +21,20 @@ class Game {
       ["6", "7", "8"]
     ];
   }
+
+  determineCurrentPlayer() {
+
+  }
+
+  checkForWins() {
+
+  }
+
+  checkForDraw() {
+
+  }
+
+  resetGame() {
+
+  }
 }
