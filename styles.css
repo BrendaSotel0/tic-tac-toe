@@ -21,3 +21,10 @@ main {
   background-color: #D8BFD8;
   width: 60%;
 }
+
+.game-reset {
+  border: none;
+  background-color: #FFE4E1;
+  width: 40%;
+  height: 5%;
+}
