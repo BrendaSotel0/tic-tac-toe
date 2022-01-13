@@ -26,6 +26,20 @@ class Game {
     var currentToken;
     this.isPlayer1Turn === true ? currentToken = this.player1.token : currentToken = this.player2.token;
     return currentToken;
+    console.log("####", currentToken);
+  }
+
+  addMove() {
+    console.log("%%%", square.innerText);
+    if (square[event.target.id].innerText === "" && this.gameOver === false) {
+      var currentToken = this.determineCurrentToken()
+      this.board[event.target.id] = currentToken;
+      square[event.target.id] = currentToken;
+    }
+    return currentToken;
+    console.log("$$$", addMove);
+    console.log("@@@@", currentToken);
+    console.log("!!!", determineCurrentToken);
   }
 
   checkForWins() {
