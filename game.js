@@ -29,16 +29,17 @@ class Game {
   }
 
   checkForWins() {
-    var currentPlayer = this.determineCurrentToken();
+    var currentPlayerToken = this.determineCurrentToken();
     for (var i = 0; i < this.winningCombos.length; i++) {
       if (
-        this.board[this.winningCombos[i][0]] === currentPlayer && this.board[this.winningCombos[i][1]] === currentPlayer && this.board[this.winningCombos[i][2]] === currentPlayer
+        this.board[this.winningCombos[i][0]] === currentPlayerToken && this.board[this.winningCombos[i][1]] === currentPlayerToken && this.board[this.winningCombos[i][2]] === currentPlayerToken
       ) {
-        // currentPlayer.wins++;
-        //this isn't working bc determineCurrentToken is just a currentToken
-        //not a player
-
-        this.notification = `${currentPlayer} wins!`;
+        if (this.isPlayer1Turn === true) {
+          this.player1.wins++;
+        } else {
+          this.player2.wins++;
+        }
+        this.notification = `${currentPlayerToken} wins!`;
         return true;
       }
     }
