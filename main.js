@@ -19,7 +19,9 @@ function displayMove() {
     var currentToken = game.determineCurrentToken();
     game.board[event.target.id] = currentToken;
     square[event.target.id].innerText = currentToken;
-    if (game.checkForWins()) {
+    whoIsUp.innerText = `It's ${currentToken}'s turn`;
+    if (game.checkForWins() || game.checkForDraw()) {
+      whoIsUp.innerText = game.notification;
       return game.gameOver = true;
     }
     game.isPlayer1Turn = !game.isPlayer1Turn;

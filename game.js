@@ -29,22 +29,25 @@ class Game {
   }
 
   checkForWins() {
-    var currentPlayer = this.determineCurrentToken();
+    var currentPlayerToken = this.determineCurrentToken();
     for (var i = 0; i < this.winningCombos.length; i++) {
       if (
-        this.board[this.winningCombos[i][0]] === currentPlayer && this.board[this.winningCombos[i][1]] === currentPlayer && this.board[this.winningCombos[i][2]] === currentPlayer
+        this.board[this.winningCombos[i][0]] === currentPlayerToken && this.board[this.winningCombos[i][1]] === currentPlayerToken && this.board[this.winningCombos[i][2]] === currentPlayerToken
       ) {
-        // currentPlayer.wins++;
-        // this.gameOver = true;
-        // this.notification = `${currentPlayer} wins!`;
+        this.isPlayer1Turn ? this.player1.wins++ : this.player2.wins++;
+        this.notification = `${currentPlayerToken} wins!`;
         return true;
-        // console.log("CPW", currentPlayer.wins);
       }
     }
   }
 
   checkForDraw() {
-
+    for (var i = 0; i < this.board.length; i++) {
+      if (!this.board.includes("")) {
+        this.notification = `It's a tie!`;
+        return true;
+      }
+    }
   }
 
   resetGame() {
