@@ -29,20 +29,16 @@ class Game {
   }
 
   checkForWins() {
-    console.log("T", determineCurrentToken());
-    console.log("!", checkForWins());
-    var currentPlayer;
-    this.isPlayer1Turn ? currentPlayer = this.player1 : currentPlayer = this.player2;
-
+    var currentPlayer = this.determineCurrentToken();
     for (var i = 0; i < this.winningCombos.length; i++) {
       if (
-        this.board[this.winningCombos[i][0]] === currentPlayer.token && this.board[this.winningCombos[i][1]] === currentPlayer.token && this.board[this.winningCombos[i][2]] === currentPlayer.token
+        this.board[this.winningCombos[i][0]] === currentPlayer && this.board[this.winningCombos[i][1]] === currentPlayer && this.board[this.winningCombos[i][2]] === currentPlayer
       ) {
-        this.notification = `${currentPlayer.token} wins!`;
-        currentPlayer.wins++;
-        console.log("CP", currentPlayer);
-        console.log("CPW", currentPlayer.wins);
+        // currentPlayer.wins++;
+        // this.gameOver = true;
+        // this.notification = `${currentPlayer} wins!`;
         return true;
+        // console.log("CPW", currentPlayer.wins);
       }
     }
   }

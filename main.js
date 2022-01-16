@@ -15,11 +15,14 @@ function loadGame() {
 }
 
 function displayMove() {
-  var currentToken = game.determineCurrentToken();
   if (square[event.target.id].innerText === "" && game.gameOver === false) {
+    var currentToken = game.determineCurrentToken();
     game.board[event.target.id] = currentToken;
     square[event.target.id].innerText = currentToken;
+    if (game.checkForWins()) {
+      return game.gameOver = true;
+    }
     game.isPlayer1Turn = !game.isPlayer1Turn;
   }
-  return currentToken;
+  // return currentToken;
 }
