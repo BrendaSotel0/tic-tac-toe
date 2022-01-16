@@ -34,11 +34,7 @@ class Game {
       if (
         this.board[this.winningCombos[i][0]] === currentPlayerToken && this.board[this.winningCombos[i][1]] === currentPlayerToken && this.board[this.winningCombos[i][2]] === currentPlayerToken
       ) {
-        if (this.isPlayer1Turn === true) {
-          this.player1.wins++;
-        } else {
-          this.player2.wins++;
-        }
+        this.isPlayer1Turn ? this.player1.wins++ : this.player2.wins++;
         this.notification = `${currentPlayerToken} wins!`;
         return true;
       }
