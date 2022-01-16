@@ -22,12 +22,25 @@ class Game {
     ];
   }
 
-  determineCurrentPlayer() {
-
+  determineCurrentToken() {
+    var currentToken;
+    this.isPlayer1Turn ? currentToken = this.player1.token : currentToken = this.player2.token;
+    return currentToken;
   }
 
   checkForWins() {
-
+    var currentPlayer = this.determineCurrentToken();
+    for (var i = 0; i < this.winningCombos.length; i++) {
+      if (
+        this.board[this.winningCombos[i][0]] === currentPlayer && this.board[this.winningCombos[i][1]] === currentPlayer && this.board[this.winningCombos[i][2]] === currentPlayer
+      ) {
+        // currentPlayer.wins++;
+        // this.gameOver = true;
+        // this.notification = `${currentPlayer} wins!`;
+        return true;
+        // console.log("CPW", currentPlayer.wins);
+      }
+    }
   }
 
   checkForDraw() {
