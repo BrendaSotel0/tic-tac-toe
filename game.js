@@ -23,9 +23,21 @@ class Game {
   }
 
   determineCurrentToken() {
-    var currentToken;
-    this.isPlayer1Turn ? currentToken = this.player1.token : currentToken = this.player2.token;
-    return currentToken;
+    return this.isPlayer1Turn ? this.player1.token : this.player2.token;
+  }
+
+  updateBoard(token) {
+    this.board[event.target.id] = token;
+  }
+
+  switchPlayer() {
+    this.isPlayer1Turn = !this.isPlayer1Turn;
+  }
+  
+  determineEndGame() {
+    if (this.checkForWins() || this.checkForDraw()) {
+      return true;
+    }
   }
 
   checkForWins() {
@@ -56,7 +68,8 @@ class Game {
     for (var i = 0; i < this.board.length; i++) {
       this.board[i] = "";
     }
-    this.notification = `It's ${this.determineCurrentToken()}'s turn!`
+    this.isPlayer1Turn = true;
+    this.notification = `It's ${this.determineCurrentToken()}'s turn!`;
     this.gameOver = false;
   }
 }

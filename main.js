@@ -6,7 +6,7 @@ var player1Wins = document.querySelector('.p1Wins');
 var player2Wins = document.querySelector('.p2Wins');
 
 window.addEventListener("load", loadGame);
-board.addEventListener("click", displayMove);
+board.addEventListener("click", updateGame);
 reset.addEventListener("click", displayReset);
 
 var game;
@@ -15,19 +15,29 @@ function loadGame() {
   game = new Game();
 }
 
-function displayMove() {
+function updateGame() {
   if (square[event.target.id].innerText === "" && game.gameOver === false) {
     var currentToken = game.determineCurrentToken();
-    game.board[event.target.id] = currentToken;
+    game.updateBoard(currentToken);
     square[event.target.id].innerText = currentToken;
-    whoIsUp.innerText = `It's ${currentToken}'s turn!`;
-    if (game.checkForWins() || game.checkForDraw()) {
-      whoIsUp.innerText = game.notification;
-      return game.gameOver = true;
+    if (game.determineEndGame()) {
+      displayEndGame()
+      return;
     }
-    game.isPlayer1Turn = !game.isPlayer1Turn;
+    game.switchPlayer();
+    displayTurn();
   }
-  // return currentToken;
+}
+
+function displayTurn() {
+  var playersTurn = game.isPlayer1Turn ? game.player1.token : game.player2.token;
+  whoIsUp.innerText = `It's ${playersTurn}'s turn!`;
+}
+
+function displayEndGame() {
+    player1Wins.innerText = game.player1.wins;
+    player2Wins.innerText = game.player2.wins;
+    whoIsUp.innerText = game.notification;
 }
 
 function displayReset() {
@@ -36,5 +46,4 @@ function displayReset() {
     square[i].innerText = "";
   }
   whoIsUp.innerText = game.notification;
-  // this.gameOver = false;
 }
