@@ -21,7 +21,7 @@ function updateGame() {
     game.updateBoard(currentToken);
     square[event.target.id].innerText = currentToken;
     if (game.determineEndGame()) {
-      displayEndGame()
+      displayEndGame();
       return;
     }
     game.switchPlayer();

@@ -33,7 +33,7 @@ class Game {
   switchPlayer() {
     this.isPlayer1Turn = !this.isPlayer1Turn;
   }
-  
+
   determineEndGame() {
     if (this.checkForWins() || this.checkForDraw()) {
       return true;
