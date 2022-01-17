@@ -51,6 +51,9 @@ class Game {
   }
 
   resetGame() {
-
+    for (var i = 0; i < this.board.length; i++) {
+      this.board[i] = "";
+    }
+    this.notification = `It's ${this.determineCurrentToken()}'s turn!'`
   }
 }
