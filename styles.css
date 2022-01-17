@@ -39,6 +39,11 @@ div {
   font-size: 40px;
 }
 
+.p1Wins,
+.p2Wins {
+  color: #FFFFFF;
+}
+
 .game-reset {
   border: none;
   background-color: #FFE4E1;

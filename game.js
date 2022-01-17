@@ -35,11 +35,6 @@ class Game {
     this.notification = `It's ${this.determineCurrentToken()}'s turn!`;
   }
 
-  awardWin(token) {
-    this.isPlayer1Turn ? this.player1.wins++ : this.player2.wins++;
-    this.notification = `${token} wins!`;
-  }
-
   checkForWins() {
     var currentPlayerToken = this.determineCurrentToken();
     for (var i = 0; i < this.winningCombos.length; i++) {
@@ -51,6 +46,11 @@ class Game {
         return true;
       }
     }
+  }
+
+  awardWin(token) {
+    this.isPlayer1Turn ? this.player1.wins++ : this.player2.wins++;
+    this.notification = `${token} wins!`;
   }
 
   checkForDraw() {
