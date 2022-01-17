@@ -36,6 +36,7 @@ class Game {
       ) {
         this.isPlayer1Turn ? this.player1.wins++ : this.player2.wins++;
         this.notification = `${currentPlayerToken} wins!`;
+        setTimeout(displayReset, 2000);
         return true;
       }
     }
@@ -45,6 +46,7 @@ class Game {
     for (var i = 0; i < this.board.length; i++) {
       if (!this.board.includes("")) {
         this.notification = `It's a tie!`;
+        setTimeout(displayReset, 2000);
         return true;
       }
     }
@@ -54,6 +56,7 @@ class Game {
     for (var i = 0; i < this.board.length; i++) {
       this.board[i] = "";
     }
-    this.notification = `It's ${this.determineCurrentToken()}'s turn!'`
+    this.notification = `It's ${this.determineCurrentToken()}'s turn!`
+    this.gameOver = false;
   }
 }

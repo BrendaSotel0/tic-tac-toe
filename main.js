@@ -36,4 +36,5 @@ function displayReset() {
     square[i].innerText = "";
   }
   whoIsUp.innerText = game.notification;
+  // this.gameOver = false;
 }
