@@ -32,12 +32,12 @@ class Game {
 
   switchPlayer() {
     this.isPlayer1Turn = !this.isPlayer1Turn;
+    this.notification = `It's ${this.determineCurrentToken()}'s turn!`;
   }
 
-  determineEndGame() {
-    if (this.checkForWins() || this.checkForDraw()) {
-      return true;
-    }
+  awardWin(token) {
+    this.isPlayer1Turn ? this.player1.wins++ : this.player2.wins++;
+    this.notification = `${token} wins!`;
   }
 
   checkForWins() {
@@ -46,8 +46,7 @@ class Game {
       if (
         this.board[this.winningCombos[i][0]] === currentPlayerToken && this.board[this.winningCombos[i][1]] === currentPlayerToken && this.board[this.winningCombos[i][2]] === currentPlayerToken
       ) {
-        this.isPlayer1Turn ? this.player1.wins++ : this.player2.wins++;
-        this.notification = `${currentPlayerToken} wins!`;
+        this.awardWin(currentPlayerToken);
         setTimeout(displayReset, 2000);
         return true;
       }
@@ -64,11 +63,17 @@ class Game {
     }
   }
 
+  determineEndGame() {
+    if (this.checkForWins() || this.checkForDraw()) {
+      return true;
+    }
+  }
+
   resetGame() {
     for (var i = 0; i < this.board.length; i++) {
       this.board[i] = "";
     }
-    this.isPlayer1Turn = true;
+    this.switchPlayer();
     this.notification = `It's ${this.determineCurrentToken()}'s turn!`;
     this.gameOver = false;
   }

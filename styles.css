@@ -29,7 +29,9 @@ main {
   height: 5%;
 }
 
-.row-1, .row-2, .row-3 {
+.row-1,
+.row-2,
+.row-3 {
   height: 33.33%;
   width: 100%;
   display: flex;
@@ -40,9 +42,5 @@ main {
   border: 2px solid #D8BFD8;
   background-color: #7C2E41;
   height: 150px;
-  width: 150px
-}
-
-.hidden {
-  /* display: none; */
+  width: 150px;
 }

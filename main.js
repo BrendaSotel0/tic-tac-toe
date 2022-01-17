@@ -31,7 +31,7 @@ function updateGame() {
 
 function displayTurn() {
   var playersTurn = game.isPlayer1Turn ? game.player1.token : game.player2.token;
-  whoIsUp.innerText = `It's ${playersTurn}'s turn!`;
+  whoIsUp.innerText = game.notification;
 }
 
 function displayEndGame() {
