@@ -1,25 +1,42 @@
 html,
 body {
   display: flex;
+  margin: 0;
+  padding: 0;
   height: 100%;
   width: 100%;
   font-family: 'Avantgarde', sans-serif;
 }
 
-aside {
+aside,
+main {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+aside {
   background-color: #6A040F;
   width: 20%;
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: #D8BFD8;
   width: 60%;
+}
+
+h1,
+h2 {
+  font-size: 50px;
+}
+
+div {
+  font-size: 100px;
+  text-align: center;
+}
+
+.who-is-up {
+  font-size: 40px;
 }
 
 .game-reset {
