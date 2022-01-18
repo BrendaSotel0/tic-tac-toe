@@ -1,25 +1,47 @@
 html,
 body {
   display: flex;
+  margin: 0;
+  padding: 0;
   height: 100%;
   width: 100%;
   font-family: 'Avantgarde', sans-serif;
 }
 
-aside {
+aside,
+main {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+aside {
   background-color: #6A040F;
   width: 20%;
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: #D8BFD8;
   width: 60%;
+}
+
+h1,
+h2 {
+  font-size: 50px;
+}
+
+div {
+  font-size: 100px;
+  text-align: center;
+}
+
+.who-is-up {
+  font-size: 40px;
+}
+
+.p1Wins,
+.p2Wins {
+  color: #FFFFFF;
 }
 
 .game-reset {
@@ -29,7 +51,9 @@ main {
   height: 5%;
 }
 
-.row-1, .row-2, .row-3 {
+.row-1,
+.row-2,
+.row-3 {
   height: 33.33%;
   width: 100%;
   display: flex;
@@ -40,9 +64,5 @@ main {
   border: 2px solid #D8BFD8;
   background-color: #7C2E41;
   height: 150px;
-  width: 150px
-}
-
-.hidden {
-  /* display: none; */
+  width: 150px;
 }
