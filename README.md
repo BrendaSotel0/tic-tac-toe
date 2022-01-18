@@ -19,7 +19,8 @@ of the reset button.
 - Player 1 and 2 will swap turns until a game is won or a draw
 - The game can be reset on click of the reset button
 
-![](https://media.giphy.com/media/JTuLwSxoSwQVBjuks7/giphy.gif)
+![](https://media.giphy.com/media/5LgH18sLmzadLk8Lyv/giphy.gif)
+
 
 ## Future Additions
 - Play against the computer instead of another person
