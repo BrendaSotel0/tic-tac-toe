@@ -25,7 +25,10 @@ main {
   width: 60%;
 }
 
-h1,
+h1 {
+  font-size: 60px;
+}
+
 h2 {
   font-size: 50px;
 }
@@ -51,9 +54,7 @@ div {
   height: 5%;
 }
 
-.row-1,
-.row-2,
-.row-3 {
+.row{
   height: 33.33%;
   width: 100%;
   display: flex;
