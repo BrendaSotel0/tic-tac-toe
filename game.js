@@ -41,6 +41,7 @@ class Game {
       if (
         this.board[this.winningCombos[i][0]] === currentPlayerToken && this.board[this.winningCombos[i][1]] === currentPlayerToken && this.board[this.winningCombos[i][2]] === currentPlayerToken
       ) {
+        this.gameOver = true;
         this.awardWin(currentPlayerToken);
         setTimeout(displayReset, 2000);
         return true;
